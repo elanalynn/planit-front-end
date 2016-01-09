@@ -39,3 +39,8 @@ Handlebars.registerHelper('compare', function(val1, val2, options) {
   if (val1 == val2) return options.fn(this);
   else return options.inverse(this);
 });
+
+function displayTemplate(selector, partial, data) {
+  var template = Handlebars.compile(Handlebars.partials[partial]);
+  $(selector).html(template(data));
+}
